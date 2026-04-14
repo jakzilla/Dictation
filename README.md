@@ -1,4 +1,4 @@
-# Dication
+# Dictation
 
 A local macOS dictation app powered by [faster-whisper](https://github.com/SYSTRAN/faster-whisper). Hold a hotkey to record, release to transcribe and type the result at your cursor. Everything runs locally — no API calls, no cloud services.
 
@@ -21,8 +21,8 @@ A local macOS dictation app powered by [faster-whisper](https://github.com/SYSTR
 
 ```bash
 # Clone the repo
-git clone https://github.com/jakzilla/Dication.git
-cd Dication
+git clone https://github.com/jakzilla/Dictation.git
+cd Dictation
 
 # Install dependencies
 ./setup.sh
@@ -40,7 +40,7 @@ pip3 install -r requirements.txt
 ### Run from Terminal
 
 ```bash
-cd Dication
+cd Dictation
 arch -arm64 python3 -u main.py
 ```
 
@@ -50,10 +50,10 @@ Create a Dictation.app using AppleScript (Script Editor > save as Application), 
 
 ```applescript
 on run
-    do shell script "pkill -f \"Dication/main.py\" 2>/dev/null; true"
+    do shell script "pkill -f \"Dictation/main.py\" 2>/dev/null; true"
     delay 0.5
     tell application "Terminal"
-        set w to do script "cd ~/Dication && arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -u main.py; exit"
+        set w to do script "cd ~/Dictation && arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -u main.py; exit"
         delay 1
         set miniaturized of front window to true
     end tell
